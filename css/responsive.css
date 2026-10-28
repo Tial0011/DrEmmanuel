@@ -1,0 +1,9 @@
+/* Cross-component responsive adjustments. Component-specific breakpoints live beside their components. */
+@media (max-width: 480px) {
+  :root { --nav-h: 68px; }
+  .hero__actions .btn { flex: 1 1 100%; }
+  .stats { grid-template-columns: repeat(3, 1fr); }
+  .stat { padding-right: 0.75rem; }
+  .stat + .stat { padding-left: 0.9rem; }
+}
+@media (min-width: 1600px) { :root { --container: 1440px; } }

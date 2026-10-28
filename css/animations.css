@@ -1,0 +1,31 @@
+/* One orchestrated moment: the hero entrance and the pulse trace drawing itself.
+   Nothing else on the page animates on its own. */
+
+.js [data-intro] { opacity: 0; transform: translateY(22px); }
+.js.is-ready [data-intro] {
+  opacity: 1; transform: none;
+  transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+  transition-delay: calc(var(--i, 0) * 110ms + 150ms);
+}
+
+.pulse__path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+.js.is-ready .pulse__path {
+  animation: trace 2.4s 0.9s cubic-bezier(0.5, 0, 0.2, 1) forwards;
+}
+.pulse__dot { opacity: 0; }
+.js.is-ready .pulse__dot { animation: dot-in 0.4s 3.2s forwards, beat 2.4s 3.6s infinite; }
+
+@keyframes trace { to { stroke-dashoffset: 0; } }
+@keyframes dot-in { to { opacity: 1; } }
+@keyframes beat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.7); } }
+
+.no-js [data-intro], .no-js .pulse__path { opacity: 1; transform: none; stroke-dashoffset: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .js [data-intro] { opacity: 1; transform: none; }
+  .pulse__path { stroke-dashoffset: 0; animation: none !important; }
+  .pulse__dot { opacity: 1; animation: none !important; }
+}

@@ -1,0 +1,49 @@
+/* ==========================================================
+   Design tokens — the only place raw colour values live.
+   ========================================================== */
+:root {
+  /* Navy scale (primary dark surfaces) */
+  --navy-950: #030f1f;
+  --navy-900: #051a31;
+  --navy-800: #0a2a47;
+  --navy-700: #133a5c;
+
+  /* Accents */
+  --gold-500: #ffc20e;   /* selective headline emphasis */
+  --gold-600: #e0a800;
+  --teal-500: #00a99d;   /* secondary accent, primary action */
+  --teal-600: #008f85;
+  --teal-300: #4fd1c5;
+
+  /* Light surfaces */
+  --paper: #f7f6f2;
+  --paper-2: #ecebe5;
+  --white: #ffffff;
+  --ink: #0a1a2f;        /* text on light */
+
+  /* Supporting */
+  --muted-on-dark: #9fb3c8;
+  --muted-on-light: #50607a;
+  --line-on-dark: rgba(159, 179, 200, 0.22);
+  --line-on-light: rgba(10, 26, 47, 0.14);
+
+  /* Type */
+  --font-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+
+  --step--1: clamp(0.8rem, 0.78rem + 0.1vw, 0.875rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --step-1: clamp(1.2rem, 1.1rem + 0.5vw, 1.5rem);
+  --step-2: clamp(1.6rem, 1.3rem + 1.4vw, 2.5rem);
+  --step-3: clamp(2rem, 1.4rem + 3vw, 3.9rem);
+  --step-hero: clamp(2.6rem, 1rem + 3.9vw, 4.9rem);
+
+  /* Layout */
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --container: 1280px;
+  --nav-h: 76px;
+  --section-pad: clamp(4.5rem, 9vw, 8.5rem);
+  --radius: 2px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}

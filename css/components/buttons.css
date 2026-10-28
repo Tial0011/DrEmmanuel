@@ -1,0 +1,20 @@
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.75rem;
+  min-height: 3.4rem; padding: 0 1.6rem;
+  font-weight: 700; font-size: 0.95rem; letter-spacing: 0.01em;
+  border: 1px solid transparent; border-radius: var(--radius);
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+.btn svg { width: 1.1rem; height: 1.1rem; transition: transform 0.25s var(--ease-out); }
+.btn:hover svg { transform: translate(2px, -2px); }
+
+.btn--primary { background: var(--teal-500); color: var(--navy-950); }
+.btn--primary:hover { background: var(--teal-300); }
+
+.btn--outline { border-color: var(--line-on-dark); color: var(--white); }
+.btn--outline:hover { border-color: var(--gold-500); color: var(--gold-500); }
+.btn--outline:hover svg { transform: none; }
+
+.btn--small { min-height: 2.6rem; padding: 0 1.1rem; font-size: 0.88rem; }
+.btn--gold { background: var(--gold-500); color: var(--navy-950); }
+.btn--gold:hover { background: #ffd24a; }
