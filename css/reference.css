@@ -45,6 +45,22 @@ body { padding-top: 78px; }
   body { padding-top: 68px; }
 }
 
+/* Footer: a clean, high-contrast sign-off with accessible social controls. */
+.footer { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 1.5rem 3rem; padding: 2rem clamp(24px, 5vw, 78px); background: #03101f; border-top: 1px solid rgba(162, 199, 218, .15); }
+.footer__brand { display: flex; align-items: center; gap: 1rem; }
+.footer__brand > span { display: grid; flex: 0 0 auto; width: 58px; height: 58px; place-items: center; padding-left: .08em; background: #06172d; border: 1px solid rgba(190, 218, 232, .34); color: var(--yellow); font-size: 14px; font-weight: 800; letter-spacing: .08em; line-height: 1; }
+.footer__brand p { display: grid; gap: .22rem; }
+.footer__brand strong { color: #fff; font-size: .85rem; }
+.footer__brand small { color: #91aabd; font-size: .66rem; letter-spacing: .025em; }
+.footer__socials { display: flex; gap: .65rem; }
+.footer__socials a { display: grid; width: 38px; height: 38px; place-items: center; border: 1px solid rgba(190, 218, 232, .2); border-radius: 50%; color: #b9d7dc; transition: transform .22s ease, color .22s ease, border-color .22s ease, background .22s ease; }
+.footer__socials a:hover, .footer__socials a:focus-visible { transform: translateY(-3px); border-color: var(--teal); background: var(--teal); color: #fff; }
+.footer__socials svg { width: 17px; height: 17px; fill: currentColor; }
+.footer__socials a:nth-child(2) svg { fill: none; }
+.footer__copy { grid-column: 1 / -1; padding-top: 1.25rem; border-top: 1px solid rgba(162, 199, 218, .11); color: #7993a8; font-size: .68rem; }
+
+@media (max-width: 560px) { .footer { grid-template-columns: 1fr; gap: 1.25rem; padding-block: 1.75rem; } .footer__socials { justify-self: start; } }
+
 /* Glass navigation with a compact navy menu control inspired by the supplied icon. */
 .navbar {
   background: linear-gradient(115deg, rgba(4, 19, 38, .9), rgba(8, 30, 54, .66));
