@@ -25,6 +25,26 @@
 /* Let the hero copy and portrait be the two grid items on desktop. */
 .hero__grid { display: contents; }
 
+/* Type system: expressive display type paired with a calm, highly legible text face. */
+:root { --font-display: "Bricolage Grotesque", "Helvetica Neue", sans-serif; --font-body: "Hanken Grotesk", "Helvetica Neue", sans-serif; }
+body { font-family: var(--font-body); }
+h1, h2, h3, blockquote { font-family: var(--font-display); font-optical-sizing: auto; }
+.hero__title, .manifesto h2, .section-heading h2, .research-title h2, .insights-intro h2, .contact-section h2, .quote-section blockquote { font-variation-settings: "opsz" 72; }
+.navbar__link, .mobile-menu__link, .btn, .text-link, .media-download { font-family: var(--font-body); }
+.navbar__link, .mobile-menu__link { transition: color .22s ease, letter-spacing .3s cubic-bezier(.22, 1, .36, 1); }
+.navbar__link:hover, .mobile-menu__link:hover { letter-spacing: .025em; }
+
+.speaking-grid .topic-icon { width: 24px; height: 24px; margin: 52px 0 18px; color: var(--teal); }
+.research-proof__icon { width: 40px; height: 40px; color: var(--teal); }
+
+/* Keep the glass navigation available through every section of the page. */
+.navbar { position: fixed; inset: 0 0 auto; width: 100%; }
+body { padding-top: 78px; }
+
+@media (max-width: 760px) {
+  body { padding-top: 68px; }
+}
+
 /* Glass navigation with a compact navy menu control inspired by the supplied icon. */
 .navbar {
   background: linear-gradient(115deg, rgba(4, 19, 38, .9), rgba(8, 30, 54, .66));
