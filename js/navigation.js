@@ -17,7 +17,12 @@ export function initNavigation() {
   });
 
   // Scrolled state
-  const onScroll = () => navbar.classList.toggle("is-scrolled", window.scrollY > 24);
+  const onScroll = () => {
+    navbar.classList.toggle("is-scrolled", window.scrollY > 24);
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = scrollable > 0 ? Math.min(100, (window.scrollY / scrollable) * 100) : 0;
+    document.documentElement.style.setProperty("--scroll-progress", `${progress}%`);
+  };
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 

@@ -61,6 +61,152 @@ body { padding-top: 78px; }
 
 @media (max-width: 560px) { .footer { grid-template-columns: 1fr; gap: 1.25rem; padding-block: 1.75rem; } .footer__socials { justify-self: start; } }
 
+/* Premium, content-led motion. Every animation is short, purposeful and optional. */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-grid { animation: grid-drift 18s linear infinite; }
+  .hero::after { animation: halo-breathe 8s ease-in-out infinite; }
+  .hero__copy > *, .portrait { opacity: 0; animation: hero-arrive .8s cubic-bezier(.22, 1, .36, 1) forwards; }
+  .hero__copy > :nth-child(1) { animation-delay: .08s; }
+  .hero__copy > :nth-child(2) { animation-delay: .16s; }
+  .hero__copy > :nth-child(3) { animation-delay: .26s; }
+  .hero__copy > :nth-child(4) { animation-delay: .36s; }
+  .hero__copy > :nth-child(5), .portrait { animation-delay: .46s; }
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .8s cubic-bezier(.22, 1, .36, 1); transition-delay: var(--reveal-delay, 0ms); }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
+  .platform-card, .speaking-grid article { transition: transform .35s cubic-bezier(.22, 1, .36, 1), background-color .35s ease, box-shadow .35s ease; }
+  .platform-card:hover { z-index: 1; background: rgba(8, 166, 160, .11); transform: translateY(-9px); box-shadow: 0 18px 35px rgba(0, 7, 18, .24); }
+  .speaking-grid article:hover { background: #f2fbfa; transform: translateY(-7px); box-shadow: 0 16px 30px rgba(14, 46, 64, .09); }
+  .research-map span { transition: transform .25s cubic-bezier(.22, 1, .36, 1), color .25s ease, border-color .25s ease, box-shadow .25s ease; }
+  .research-map span:hover { transform: translateY(-4px); color: var(--teal); border-color: rgba(8, 166, 160, .45); box-shadow: 0 10px 18px rgba(11, 63, 74, .09); }
+  .insights-list article { transition: padding-left .35s cubic-bezier(.22, 1, .36, 1), background-color .25s ease; }
+  .insights-list article:hover { padding-left: .9rem; background: rgba(8, 166, 160, .035); }
+  .portrait__crop { transition: transform .65s cubic-bezier(.22, 1, .36, 1); }
+  .portrait:hover .portrait__crop { transform: scale(1.025); }
+  .focus-card { transition: transform .4s cubic-bezier(.22, 1, .36, 1), box-shadow .4s ease; }
+  .portrait:hover .focus-card { transform: translate(-7px, -7px); box-shadow: 0 24px 45px rgba(0, 0, 0, .32); }
+}
+
+@keyframes hero-arrive { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes grid-drift { from { background-position: 0 0, 0 0; } to { background-position: 54px 54px, 54px 54px; } }
+@keyframes halo-breathe { 0%, 100% { transform: scale(1); opacity: .75; } 50% { transform: scale(1.08); opacity: 1; } }
+
+/* A quiet reading-progress accent, tied to real scroll position. */
+.navbar::after { content: ""; position: absolute; right: auto; bottom: -1px; left: 0; width: var(--scroll-progress, 0%); height: 2px; background: linear-gradient(90deg, var(--teal), var(--yellow)); box-shadow: 0 0 12px rgba(8, 166, 160, .6); transition: width .12s linear; }
+
+/* Touch-first motion: shorter distances, less paint work, stronger hierarchy. */
+@media (max-width: 760px) and (prefers-reduced-motion: no-preference) {
+  .hero-grid { animation: none; }
+  .hero::after { animation-duration: 12s; }
+  .hero__copy > *, .portrait { animation-duration: .6s; }
+  .hero__copy > :nth-child(1) { animation-delay: .04s; }
+  .hero__copy > :nth-child(2) { animation-delay: .1s; }
+  .hero__copy > :nth-child(3) { animation-delay: .16s; }
+  .hero__copy > :nth-child(4) { animation-delay: .22s; }
+  .hero__copy > :nth-child(5), .portrait { animation-delay: .28s; }
+  .reveal { transform: translateY(16px); transition-duration: .52s, .58s; }
+  .platform-card:hover, .speaking-grid article:hover, .research-map span:hover, .insights-list article:hover { transform: none; box-shadow: none; }
+  .portrait:hover .portrait__crop, .portrait:hover .focus-card { transform: none; }
+  .mobile-menu.is-open .mobile-menu__link { opacity: 0; animation: menu-link-arrive .42s cubic-bezier(.22, 1, .36, 1) forwards; }
+  .mobile-menu.is-open .mobile-menu__link:nth-child(1) { animation-delay: .06s; }
+  .mobile-menu.is-open .mobile-menu__link:nth-child(2) { animation-delay: .11s; }
+  .mobile-menu.is-open .mobile-menu__link:nth-child(3) { animation-delay: .16s; }
+  .mobile-menu.is-open .mobile-menu__link:nth-child(4) { animation-delay: .21s; }
+  .mobile-menu.is-open .mobile-menu__link:nth-child(5) { animation-delay: .26s; }
+  .mobile-menu.is-open .btn { opacity: 0; animation: menu-link-arrive .42s .34s cubic-bezier(.22, 1, .36, 1) forwards; }
+}
+
+@media (hover: none) {
+  .platform-card:active, .speaking-grid article:active { background: rgba(8, 166, 160, .09); }
+  .research-map span:active { color: var(--teal); border-color: rgba(8, 166, 160, .45); }
+}
+
+@keyframes menu-link-arrive { from { opacity: 0; transform: translateX(-18px); } to { opacity: 1; transform: translateX(0); } }
+
+/* Original motion-graphic layer: a quiet healthcare signal and data orbit. */
+.hero-motion { position: absolute; z-index: 0; inset: 0; overflow: hidden; pointer-events: none; }
+.hero-motion__orbit { position: absolute; top: 11%; right: 4%; width: clamp(340px, 38vw, 590px); aspect-ratio: 1; border: 1px solid rgba(8, 166, 160, .22); border-radius: 50%; box-shadow: 0 0 0 70px rgba(8, 166, 160, .026), 0 0 0 140px rgba(8, 166, 160, .016); }
+.hero-motion__node { position: absolute; width: 9px; height: 9px; border-radius: 50%; background: var(--yellow); box-shadow: 0 0 0 5px rgba(244, 199, 53, .13), 0 0 18px rgba(244, 199, 53, .85); }
+.hero-motion__node--one { top: 22%; right: 16%; }
+.hero-motion__node--two { top: 49%; right: 3%; width: 6px; height: 6px; background: var(--teal); box-shadow: 0 0 0 4px rgba(8, 166, 160, .14), 0 0 15px rgba(8, 166, 160, .75); }
+.hero-motion__signal { position: absolute; right: -4%; bottom: 7%; width: min(55vw, 760px); height: 100px; opacity: .42; }
+.hero-motion__signal path { fill: none; stroke: var(--teal); stroke-width: 1.4; vector-effect: non-scaling-stroke; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-motion__orbit { animation: orbit-drift 18s ease-in-out infinite alternate; }
+  .hero-motion__node--one { animation: node-pulse 2.6s ease-in-out infinite; }
+  .hero-motion__node--two { animation: node-pulse 2.6s .8s ease-in-out infinite; }
+  .hero-motion__signal path { stroke-dasharray: 980; stroke-dashoffset: 980; animation: signal-trace 5.5s cubic-bezier(.4, 0, .2, 1) infinite; }
+}
+
+@keyframes orbit-drift { from { transform: rotate(-5deg) scale(1); } to { transform: rotate(7deg) scale(1.035); } }
+@keyframes node-pulse { 0%, 100% { transform: scale(.8); opacity: .65; } 50% { transform: scale(1.2); opacity: 1; } }
+@keyframes signal-trace { 0% { stroke-dashoffset: 980; opacity: 0; } 15% { opacity: 1; } 68% { stroke-dashoffset: 0; opacity: .85; } 100% { stroke-dashoffset: -110; opacity: 0; } }
+
+@media (max-width: 760px) {
+  .hero-motion__orbit { top: 54%; right: -48%; width: 390px; }
+  .hero-motion__node--one { top: 52%; right: 14%; }
+  .hero-motion__node--two { display: none; }
+  .hero-motion__signal { right: -35%; bottom: 3%; width: 700px; opacity: .25; }
+}
+
+@media (prefers-reduced-motion: reduce) { .hero-motion { display: none; } }
+
+/* Portrait frame assembly: digital scan fragments resolve into the full image once. */
+@media (prefers-reduced-motion: no-preference) {
+  .portrait__stack { animation: frame-lock-in .72s .4s cubic-bezier(.22, 1, .36, 1) both; }
+  .portrait__crop { isolation: isolate; clip-path: inset(0 0 0 0); animation: portrait-resolve 1.05s .48s cubic-bezier(.22, 1, .36, 1) both; }
+  .portrait__crop::before, .portrait__crop::after { content: ""; position: absolute; z-index: 3; inset: 0; pointer-events: none; }
+  .portrait__crop::before { opacity: .8; background: linear-gradient(90deg, rgba(3,16,31,.88) 0 14%, transparent 14% 23%, rgba(5,29,47,.86) 23% 39%, transparent 39% 52%, rgba(3,16,31,.9) 52% 70%, transparent 70% 83%, rgba(6,34,52,.9) 83% 100%); animation: fragment-clear 1s .5s cubic-bezier(.22, 1, .36, 1) forwards; }
+  .portrait__crop::after { opacity: .5; background-image: linear-gradient(rgba(8,166,160,.3) 1px, transparent 1px), linear-gradient(90deg, rgba(8,166,160,.3) 1px, transparent 1px); background-size: 15px 15px; mix-blend-mode: screen; animation: scan-fade .72s 1.05s ease-out forwards; }
+  .portrait__stack::before { animation: outline-draw .85s .25s cubic-bezier(.22, 1, .36, 1) both; }
+}
+
+@keyframes frame-lock-in { from { opacity: 0; transform: translate3d(20px, 12px, 0) scale(.96); } to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); } }
+@keyframes portrait-resolve { from { clip-path: inset(0 100% 0 0); } 58% { clip-path: inset(0 0 0 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes fragment-clear { from { opacity: .9; transform: translateX(0); } to { opacity: 0; transform: translateX(9%); } }
+@keyframes scan-fade { from { opacity: .5; } to { opacity: 0; } }
+@keyframes outline-draw { from { opacity: 0; clip-path: inset(0 100% 100% 0); } to { opacity: 1; clip-path: inset(0); } }
+
+/* On small screens, retain the premium reveal but avoid costly overlay painting. */
+@media (max-width: 760px) and (prefers-reduced-motion: no-preference) {
+  .portrait__stack { animation: mobile-frame-lock-in .5s .22s cubic-bezier(.22, 1, .36, 1) both; }
+  .portrait__crop { animation: portrait-resolve .68s .28s cubic-bezier(.22, 1, .36, 1) both; }
+  .portrait__crop::before, .portrait__crop::after { display: none; }
+  .portrait__stack::before { animation: outline-draw .55s .18s cubic-bezier(.22, 1, .36, 1) both; }
+}
+
+@keyframes mobile-frame-lock-in { from { opacity: 0; transform: translateY(14px) scale(.975); } to { opacity: 1; transform: translateY(0) scale(1); } }
+
+/* The portrait sequence begins only once the visitor reaches the frame. */
+@media (prefers-reduced-motion: no-preference) {
+  .portrait { opacity: 0; animation: none; }
+  .portrait.is-frame-ready { animation: hero-arrive .62s cubic-bezier(.22, 1, .36, 1) both; }
+  .portrait__stack, .portrait__crop, .portrait__stack::before { animation: none; }
+  .portrait.is-frame-ready .portrait__stack { animation: frame-lock-in .72s .12s cubic-bezier(.22, 1, .36, 1) both; }
+  .portrait.is-frame-ready .portrait__crop { animation: portrait-resolve 1.05s .2s cubic-bezier(.22, 1, .36, 1) both; }
+  .portrait.is-frame-ready .portrait__crop::before { animation: fragment-clear 1s .22s cubic-bezier(.22, 1, .36, 1) forwards; }
+  .portrait.is-frame-ready .portrait__crop::after { animation: scan-fade .72s .76s ease-out forwards; }
+  .portrait.is-frame-ready .portrait__stack::before { animation: outline-draw .85s cubic-bezier(.22, 1, .36, 1) both; }
+}
+
+@media (max-width: 760px) and (prefers-reduced-motion: no-preference) {
+  .portrait.is-frame-ready .portrait__stack { animation: mobile-frame-lock-in .5s .08s cubic-bezier(.22, 1, .36, 1) both; }
+  .portrait.is-frame-ready .portrait__crop { animation: portrait-resolve .68s .14s cubic-bezier(.22, 1, .36, 1) both; }
+  .portrait.is-frame-ready .portrait__stack::before { animation: outline-draw .55s cubic-bezier(.22, 1, .36, 1) both; }
+}
+
+/* The hero statement reveals in the same order as its meaning. */
+.hero-title__phrase { display: block; }
+@media (prefers-reduced-motion: no-preference) {
+  .hero-title__phrase { opacity: 0; transform: translateY(115%); clip-path: inset(0 0 100% 0); animation: phrase-rise .72s cubic-bezier(.22, 1, .36, 1) forwards; }
+  .hero-title__phrase:nth-child(1) { animation-delay: .28s; }
+  .hero-title__phrase:nth-child(2) { animation-delay: .39s; }
+  .hero-title__phrase:nth-child(3) { animation-delay: .5s; }
+  .hero-title__phrase:nth-child(4) { animation-delay: .61s; }
+  .hero-title__phrase:nth-child(5) { animation-delay: .72s; }
+}
+@keyframes phrase-rise { from { opacity: 0; transform: translateY(115%); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0); } }
+
 /* Glass navigation with a compact navy menu control inspired by the supplied icon. */
 .navbar {
   background: linear-gradient(115deg, rgba(4, 19, 38, .9), rgba(8, 30, 54, .66));
