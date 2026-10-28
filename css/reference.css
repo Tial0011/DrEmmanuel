@@ -36,6 +36,7 @@ h1, h2, h3, blockquote { font-family: var(--font-display); font-optical-sizing: 
 
 .speaking-grid .topic-icon { width: 24px; height: 24px; margin: 52px 0 18px; color: var(--teal); }
 .research-proof__icon { width: 40px; height: 40px; color: var(--teal); }
+.platform-top .platform-icon { width: 24px; height: 24px; color: var(--teal); }
 
 /* Keep the glass navigation available through every section of the page. */
 .navbar { position: fixed; inset: 0 0 auto; width: 100%; }
@@ -206,6 +207,33 @@ body { padding-top: 78px; }
   .hero-title__phrase:nth-child(5) { animation-delay: .72s; }
 }
 @keyframes phrase-rise { from { opacity: 0; transform: translateY(115%); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0); } }
+
+/* Atom-to-frame sequence: scattered particles condense as the portrait resolves. */
+.portrait-particles { position: absolute; z-index: 4; inset: 0; pointer-events: none; overflow: visible; }
+.portrait-particles i { position: absolute; top: 50%; left: 50%; width: 7px; height: 7px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 4px rgba(8, 166, 160, .1), 0 0 16px rgba(8, 166, 160, .72); }
+.portrait-particles i:nth-child(3n) { width: 5px; height: 5px; background: var(--yellow); box-shadow: 0 0 0 3px rgba(244, 199, 53, .1), 0 0 14px rgba(244, 199, 53, .7); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .portrait.is-frame-ready .portrait__stack { animation-duration: 1.9s; animation-delay: .5s; }
+  .portrait.is-frame-ready .portrait__crop { animation: portrait-resolve 2.8s .7s cubic-bezier(.22, 1, .36, 1) both; }
+  .portrait.is-frame-ready .portrait__crop::before { animation: fragment-clear 2.7s .62s cubic-bezier(.22, 1, .36, 1) forwards; }
+  .portrait.is-frame-ready .portrait__crop::after { animation: scan-fade 1.35s 2.15s ease-out forwards; }
+  .portrait.is-frame-ready .portrait__stack::before { animation: outline-draw 2.1s .26s cubic-bezier(.22, 1, .36, 1) both; }
+  .portrait.is-frame-ready .portrait-particles i { animation: atom-coalesce 3.25s calc(var(--d) + .12s) cubic-bezier(.22, 1, .36, 1) forwards; }
+}
+
+@keyframes atom-coalesce { from { opacity: 0; transform: translate(var(--x), var(--y)) scale(var(--s)); } 16% { opacity: 1; } 72% { opacity: .85; transform: translate(0, 0) scale(1); } to { opacity: 0; transform: translate(0, 0) scale(.15); } }
+
+@media (max-width: 760px) and (prefers-reduced-motion: no-preference) {
+  .portrait-particles i { width: 5px; height: 5px; }
+  .portrait-particles i:nth-child(n + 5) { display: none; }
+  .portrait.is-frame-ready .portrait__stack { animation: mobile-frame-lock-in 1.25s .18s cubic-bezier(.22, 1, .36, 1) both; }
+  .portrait.is-frame-ready .portrait__crop { animation: portrait-resolve 1.9s .3s cubic-bezier(.22, 1, .36, 1) both; }
+  .portrait.is-frame-ready .portrait__stack::before { animation: outline-draw 1.5s cubic-bezier(.22, 1, .36, 1) both; }
+  .portrait.is-frame-ready .portrait-particles i { animation-duration: 2.2s; animation-delay: calc(var(--d) + .06s); }
+}
+
+@media (prefers-reduced-motion: reduce) { .portrait-particles { display: none; } }
 
 /* Glass navigation with a compact navy menu control inspired by the supplied icon. */
 .navbar {

@@ -45,6 +45,31 @@ export function initAnimations() {
       }, { threshold: 0.25, rootMargin: "0px 0px -8%" });
       portraitObserver.observe(portrait);
     }
+
+    const counters = [...document.querySelectorAll("[data-count]")];
+    const countUp = (element) => {
+      const target = Number(element.dataset.count);
+      const duration = 1150;
+      const start = performance.now();
+      const tick = (now) => {
+        const progress = Math.min(1, (now - start) / duration);
+        const eased = 1 - Math.pow(1 - progress, 4);
+        element.textContent = String(Math.round(target * eased));
+        if (progress < 1) requestAnimationFrame(tick);
+      };
+      element.textContent = "0";
+      requestAnimationFrame(tick);
+    };
+    if (counters.length) {
+      const counterObserver = new IntersectionObserver((entries, instance) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.querySelectorAll("[data-count]").forEach(countUp);
+          instance.unobserve(entry.target);
+        });
+      }, { threshold: 0.35 });
+      [...new Set(counters.map((counter) => counter.closest(".research-proof")))].filter(Boolean).forEach((block) => counterObserver.observe(block));
+    }
   };
 
   const fonts = document.fonts ? document.fonts.ready : Promise.resolve();
