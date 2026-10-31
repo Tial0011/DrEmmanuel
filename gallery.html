@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="stylesheet" href="css/main.css?v=20261031">
+  <link rel="stylesheet" href="css/gallery.css?v=20261031">
   <style>
     /* Specific navigation styles for standalone gallery page */
     .navbar__back-btn {
@@ -86,7 +86,9 @@
 
     <!-- Filters & Stats Bar -->
     <section class="gallery-controls" aria-label="Gallery filters">
-      <div class="gallery-filters" role="tablist">
+      <div class="gallery-filter-nav">
+        <p class="gallery-filter-nav__label">Browse the archive</p>
+        <div class="gallery-filters" role="tablist">
         <button class="filter-btn is-active" type="button" data-filter="all" role="tab" aria-selected="true">
           All Moments <span class="filter-count">10</span>
         </button>
@@ -102,6 +104,7 @@
         <button class="filter-btn" type="button" data-filter="community" role="tab" aria-selected="false">
           Community &amp; Training <span class="filter-count">3</span>
         </button>
+        </div>
       </div>
       <div class="gallery-count-note" id="gallery-count-note">
         Showing 10 of 10 moments

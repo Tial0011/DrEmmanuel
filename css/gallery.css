@@ -385,6 +385,67 @@
   font-weight: 600;
 }
 
+/* Gallery archive navigation: intentionally vertical, like a compact index. */
+.gallery-controls {
+  align-items: flex-start;
+  max-width: 1320px;
+  margin-inline: auto;
+}
+.gallery-filter-nav {
+  width: min(100%, 290px);
+  padding: 1.15rem;
+  border: 1px solid rgba(163, 204, 222, .16);
+  background: linear-gradient(145deg, rgba(13, 44, 68, .44), rgba(4, 20, 39, .48));
+  box-shadow: inset 0 1px rgba(255,255,255,.04), 0 14px 30px rgba(0,0,0,.12);
+}
+.gallery-filter-nav__label {
+  margin: 0 0 .8rem;
+  color: #82a4b9;
+  font-size: .65rem;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+.gallery-filters { display: grid; gap: .35rem; }
+.filter-btn {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: .75rem;
+  padding: .78rem .82rem .78rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  background: transparent;
+  color: #b9d7dc;
+  text-align: left;
+}
+.filter-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 3px;
+  height: 0;
+  background: var(--yellow);
+  transform: translateY(-50%);
+  transition: height .25s cubic-bezier(.22,1,.36,1);
+}
+.filter-btn:hover { background: rgba(8,166,160,.1); border-color: rgba(8,166,160,.2); color: #fff; }
+.filter-btn.is-active { background: rgba(8,166,160,.17); border-color: rgba(8,166,160,.4); box-shadow: none; color: #fff; }
+.filter-btn.is-active::before { height: 64%; }
+.filter-btn .filter-count { margin-left: auto; min-width: 1.65rem; padding: .18rem .38rem; border-radius: 999px; background: rgba(255,255,255,.08); color: #91bdc9; text-align: center; }
+.filter-btn.is-active .filter-count { background: var(--teal); color: #fff; }
+.gallery-count-note { margin-top: 2.4rem; }
+
+@media (max-width: 760px) {
+  .gallery-controls { display: block; padding: 1.25rem 1.25rem .75rem; }
+  .gallery-filter-nav { width: 100%; padding: .9rem; }
+  .gallery-filters { gap: .22rem; }
+  .filter-btn { min-height: 43px; padding-block: .68rem; font-size: .73rem; }
+  .gallery-count-note { margin: 1rem 0 0; padding-left: .2rem; }
+}
+
 /* Gallery Grid on Full Page */
 .gallery-container {
   padding: 20px clamp(24px, 7vw, 108px) 40px;
