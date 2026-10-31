@@ -2,7 +2,8 @@
    Requires HTTP(S). It will not work from file:// — see README. */
 
 async function fetchFragment(url) {
-  const res = await fetch(url, { cache: "no-cache" });
+  const separator = url.includes("?") ? "&" : "?";
+  const res = await fetch(`${url}${separator}v=20261031`, { cache: "no-store" });
   if (!res.ok) throw new Error(`${url} returned ${res.status}`);
   return res.text();
 }
