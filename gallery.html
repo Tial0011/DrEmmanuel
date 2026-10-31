@@ -31,6 +31,20 @@
       color: var(--navy);
       transform: translateX(-3px);
     }
+    /* Critical mobile layout override: readable cards, not compressed columns. */
+    @media (max-width: 760px) {
+      .gallery-controls { display: block !important; padding: 1.25rem 1.25rem .75rem !important; }
+      .gallery-filter-nav { width: calc(100% + 2.5rem) !important; margin-inline: -1.25rem !important; padding: .85rem 1.25rem 1rem !important; }
+      .gallery-filters { display: flex !important; flex-wrap: nowrap !important; overflow-x: auto !important; gap: .55rem !important; }
+      .filter-btn { flex: 0 0 auto !important; width: auto !important; white-space: nowrap !important; border-radius: 999px !important; }
+      .gallery-container { padding: 1.35rem 1.25rem 2.5rem !important; }
+      #gallery-grid.gallery-grid { display: grid !important; grid-template-columns: minmax(0, 1fr) !important; gap: 1.25rem !important; }
+      #gallery-grid .gallery-item { width: 100% !important; min-width: 0 !important; }
+      #gallery-grid .memory-card__media { aspect-ratio: 16 / 10 !important; }
+      #gallery-grid .memory-card__body { padding: 1.1rem !important; }
+      #gallery-grid .memory-card__title { font-size: 1.18rem !important; line-height: 1.2 !important; }
+      #gallery-grid .memory-card__desc { font-size: .82rem !important; line-height: 1.65 !important; }
+    }
   </style>
 </head>
 <body class="gallery-page">
