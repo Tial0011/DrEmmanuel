@@ -19,9 +19,9 @@ export const config = {
   navCta: { label: "Let's talk", target: "contact" },
 
   socials: [
-    { label: "LinkedIn", href: "https://www.linkedin.com/" },
-    { label: "X", href: "https://x.com/" },
-    { label: "Instagram", href: "https://www.instagram.com/" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/emmaco4real" },
+    { label: "X", href: "https://x.com/_emmaco4real_" },
+    { label: "Instagram", href: "https://www.instagram.com/_emmaco4real_/" },
   ],
 
   // Components and sections are fetched in this order.
