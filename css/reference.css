@@ -38,6 +38,14 @@ h1, h2, h3, blockquote { font-family: var(--font-display); font-optical-sizing: 
 .research-proof__icon { width: 40px; height: 40px; color: var(--teal); }
 .platform-top .platform-icon { width: 24px; height: 24px; color: var(--teal); }
 
+/* The final speaking card follows the spacious leadership composition. */
+.speaking-grid .speaking-card--leadership { min-height: 320px; }
+.speaking-grid .speaking-card--leadership .topic-icon { width: 27px; height: 27px; margin-top: 58px; margin-bottom: 22px; }
+.speaking-grid .speaking-card--leadership h3 { font-size: 22px; letter-spacing: -.035em; }
+.speaking-grid .speaking-card--leadership p { max-width: 27ch; font-size: 13px; line-height: 1.7; }
+
+@media (max-width: 760px) { .speaking-grid .speaking-card--leadership { min-height: 280px; } }
+
 /* Keep the glass navigation available through every section of the page. */
 .navbar { position: fixed; inset: 0 0 auto; width: 100%; }
 body { padding-top: 78px; }

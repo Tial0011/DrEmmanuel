@@ -2,6 +2,7 @@ import { config } from "./config.js";
 import { loadComponents, loadSections, showLoadError } from "./component-loader.js";
 import { initNavigation } from "./navigation.js";
 import { initAnimations } from "./animations.js";
+import { initMemoryWall } from "./memory-wall.js";
 import { bindConfig, $ } from "./utils.js";
 
 async function boot() {
@@ -11,6 +12,7 @@ async function boot() {
     bindConfig();
     initNavigation();
     initAnimations();
+    initMemoryWall();
 
     // Portrait fallback if the real photo is missing
     const img = $("[data-portrait]");

@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en" class="js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery &amp; Memory Wall | Dr. Emmanuel A. Owolabi</title>
+  <meta name="description" content="A comprehensive visual archive of keynotes, surgical congresses, health innovation hackathons, and clinical community trainings by Dr. Emmanuel A. Owolabi.">
+  <meta name="theme-color" content="#030f1f">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/gallery.css">
+  <style>
+    /* Specific navigation styles for standalone gallery page */
+    .navbar__back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 40px;
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--yellow);
+      background: rgba(244, 199, 53, 0.12);
+      border: 1px solid rgba(244, 199, 53, 0.35);
+      transition: all 0.2s ease;
+    }
+    .navbar__back-btn:hover {
+      background: var(--yellow);
+      color: var(--navy);
+      transform: translateX(-3px);
+    }
+  </style>
+</head>
+<body class="gallery-page">
+  <a class="skip-link" href="#gallery-content">Skip to content</a>
+
+  <!-- Header Navigation -->
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a class="brand-mark" href="index.html#home" aria-label="Dr. Emmanuel A. Owolabi, return to home">
+        <span>EAO</span>
+        <div>
+          <strong>Dr. Emmanuel A. Owolabi</strong>
+          <small>Physician · Health Innovator · Institution Builder</small>
+        </div>
+      </a>
+      <nav class="navbar__links" aria-label="Primary">
+        <a class="navbar__back-btn" href="index.html#memories">← Back to Portfolio</a>
+        <a class="navbar__link" href="index.html#about">About</a>
+        <a class="navbar__link" href="index.html#work">Work</a>
+        <a class="navbar__link" href="index.html#research">Research</a>
+        <a class="navbar__link" href="index.html#speaking">Speaking</a>
+        <a class="navbar__link" href="index.html#insights">Insights</a>
+      </nav>
+      <a class="btn btn--primary btn--small navbar__cta" href="index.html#contact">Let's talk</a>
+      <button class="navbar__toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span aria-hidden="true"></span></button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile">
+    <a class="mobile-menu__link" href="index.html#memories">← Return to Portfolio</a>
+    <a class="mobile-menu__link" href="index.html#about">About</a>
+    <a class="mobile-menu__link" href="index.html#work">Work</a>
+    <a class="mobile-menu__link" href="index.html#research">Research</a>
+    <a class="mobile-menu__link" href="index.html#speaking">Speaking</a>
+    <a class="mobile-menu__link" href="index.html#insights">Insights</a>
+    <a class="btn btn--primary" href="index.html#contact">Let's talk</a>
+  </nav>
+
+  <main id="gallery-content" class="gallery-page-wrap">
+    <!-- Hero Banner -->
+    <section class="gallery-hero">
+      <a class="gallery-breadcrumb" href="index.html#memories">
+        <span aria-hidden="true">←</span> Return to Memory Wall
+      </a>
+      <h1 class="gallery-hero__title">
+        Moments in motion: <em>The Complete Gallery</em>
+      </h1>
+      <p class="gallery-hero__lead">
+        A full visual archive of keynotes, global surgical congresses, health systems hackathons, and grassroots clinical education led or attended by Dr. Emmanuel A. Owolabi.
+      </p>
+    </section>
+
+    <!-- Filters & Stats Bar -->
+    <section class="gallery-controls" aria-label="Gallery filters">
+      <div class="gallery-filters" role="tablist">
+        <button class="filter-btn is-active" type="button" data-filter="all" role="tab" aria-selected="true">
+          All Moments <span class="filter-count">10</span>
+        </button>
+        <button class="filter-btn" type="button" data-filter="conferences" role="tab" aria-selected="false">
+          Conferences &amp; Keynotes <span class="filter-count">4</span>
+        </button>
+        <button class="filter-btn" type="button" data-filter="innovation" role="tab" aria-selected="false">
+          Health Systems &amp; AI <span class="filter-count">2</span>
+        </button>
+        <button class="filter-btn" type="button" data-filter="surgical" role="tab" aria-selected="false">
+          Surgical &amp; Mentorship <span class="filter-count">3</span>
+        </button>
+        <button class="filter-btn" type="button" data-filter="community" role="tab" aria-selected="false">
+          Community &amp; Training <span class="filter-count">3</span>
+        </button>
+      </div>
+      <div class="gallery-count-note" id="gallery-count-note">
+        Showing 10 of 10 moments
+      </div>
+    </section>
+
+    <!-- Photo Grid -->
+    <section class="gallery-container">
+      <div class="gallery-grid" id="gallery-grid">
+        <!-- Rendered dynamically by js/gallery-page.js with fallback support -->
+      </div>
+
+      <!-- Action Banner -->
+      <div class="memory-cta-strip" style="margin-top: 60px;">
+        <div class="memory-cta-strip__content">
+          <h3>Collaborate or Invite Dr. Owolabi</h3>
+          <p>Available for keynotes, global health panels, healthcare innovation advisory, and institutional mentorship programmes.</p>
+        </div>
+        <div class="memory-cta-strip__actions">
+          <a class="btn btn--primary" href="mailto:abiodunowolabi2000@gmail.com">
+            Send an enquiry <span aria-hidden="true">↗</span>
+          </a>
+          <a class="btn btn--outline" href="index.html#home">
+            Back to Home <span aria-hidden="true">↑</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span>EAO</span>
+        <p>
+          <strong class="footer__name">Dr. Emmanuel A. Owolabi</strong>
+          <small class="footer__tag">Physician · Health Innovator · Institution Builder</small>
+        </p>
+      </div>
+      <div class="footer__socials" aria-label="Social media channels">
+        <a href="https://www.linkedin.com/in/emmaco4real" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.64 1.64 0 1 0 0-3.28 1.64 1.64 0 0 0 0 3.28m1.4 9.74v-8.37H5.06v8.37h2.8z"></path></svg>
+        </a>
+        <a href="https://x.com/_emmaco4real_" target="_blank" rel="noopener noreferrer" aria-label="X profile">
+          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m4 4 16 16M4 20 20 4"></path></svg>
+        </a>
+        <a href="https://www.instagram.com/_emmaco4real_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+        </a>
+      </div>
+      <p class="footer__copy">
+        © 2026 Dr. Emmanuel A. Owolabi. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/gallery-page.js"></script>
+</body>
+</html>
+
