@@ -35,6 +35,7 @@ export const config = {
     "sections/about.html",
     "sections/selected-works.html",
     "sections/publications.html",
+    "sections/recognition.html",
     "sections/impact.html",
     "sections/memory-wall.html",
     "sections/current-focus.html",
