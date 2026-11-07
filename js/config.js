@@ -8,13 +8,14 @@ export const config = {
     year: new Date().getFullYear(),
   },
 
-  // Navigation: `id` must match the section id in /sections/*.html
+  // Section links use an `id` matching /sections/*.html; page links use `href`.
   nav: [
     { id: "about", label: "About" },
     { id: "work", label: "Work" },
     { id: "research", label: "Research" },
     { id: "speaking", label: "Speaking" },
     { id: "insights", label: "Insights" },
+    { id: "gallery", label: "Gallery", href: "gallery.html" },
   ],
   navCta: { label: "Let's talk", target: "contact" },
 

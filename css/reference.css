@@ -44,6 +44,8 @@ h1, h2, h3, blockquote { font-family: var(--font-display); font-optical-sizing: 
 .speaking-grid .speaking-card--leadership h3 { font-size: 22px; letter-spacing: -.035em; }
 .speaking-grid .speaking-card--leadership p { max-width: 27ch; font-size: 13px; line-height: 1.7; }
 
+.brand-mark__logo { display: block; flex: 0 0 46px; width: 46px; height: 41px; object-fit: contain; }
+
 @media (max-width: 760px) { .speaking-grid .speaking-card--leadership { min-height: 280px; } }
 
 /* Keep the glass navigation available through every section of the page. */

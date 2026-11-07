@@ -6,7 +6,7 @@ export function initNavigation() {
   if (!navbar) return;
 
   // Render links from config
-  const linkHTML = (cls) => config.nav.map((n, index) => `<a class="${cls}" href="#${n.id}" data-target="${n.id}" data-index="${String(index + 1).padStart(2, "0")}">${n.label}</a>`).join("");
+  const linkHTML = (cls) => config.nav.map((n, index) => `<a class="${cls}" href="${n.href || `#${n.id}`}"${n.href ? "" : ` data-target="${n.id}" data-index="${String(index + 1).padStart(2, "0")}"`}>${n.label}</a>`).join("");
   $("[data-nav-links]").innerHTML = linkHTML("navbar__link");
   $("[data-mobile-links]").insertAdjacentHTML("afterbegin", linkHTML("mobile-menu__link"));
   const desktopLinks = $("[data-nav-links]");
