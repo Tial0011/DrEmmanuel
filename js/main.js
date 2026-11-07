@@ -7,7 +7,8 @@ import { bindConfig, $ } from "./utils.js";
 
 async function boot() {
   try {
-    await loadSections(config.sections, $("#main-content"));
+    const main = $("#main-content");
+    if (!main.children.length) await loadSections(config.sections, main);
     await loadComponents();
     bindConfig();
     initNavigation();
