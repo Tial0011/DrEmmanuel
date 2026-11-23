@@ -898,10 +898,10 @@ body { padding-top: 78px; }
     transform-origin: 50% 30%;
   }
   .portrait__slide:nth-child(2) {
-    object-position: 50% 38%;
+    object-position: 40% 38%;
   }
   .portrait__slide:nth-child(3) {
-    object-position: 50% 32%;
+    object-position: 42% 32%;
   }
   .portrait__slide:nth-child(4) {
     object-position: 50% 18%;
