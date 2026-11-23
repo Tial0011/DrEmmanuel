@@ -25,10 +25,8 @@ export function initAnimations() {
 
   const reveal = () => {
     document.documentElement.classList.add("is-ready");
-    const portrait = document.querySelector(".portrait");
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       revealTargets.forEach((element) => element.classList.add("is-visible"));
-      portrait?.classList.add("is-frame-ready");
       return;
     }
     const observer = new IntersectionObserver((entries, instance) => {
@@ -39,15 +37,6 @@ export function initAnimations() {
       });
     }, { threshold: 0.12, rootMargin: "0px 0px -7%" });
     revealTargets.forEach((element) => observer.observe(element));
-
-    if (portrait) {
-      const portraitObserver = new IntersectionObserver((entries, instance) => {
-        if (!entries[0].isIntersecting) return;
-        portrait.classList.add("is-frame-ready");
-        instance.unobserve(portrait);
-      }, { threshold: 0.25, rootMargin: "0px 0px -8%" });
-      portraitObserver.observe(portrait);
-    }
 
     const counters = [...document.querySelectorAll("[data-count]")];
     const countUp = (element) => {

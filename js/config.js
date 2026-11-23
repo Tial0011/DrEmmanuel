@@ -11,13 +11,13 @@ export const config = {
   // Section links use an `id` matching /sections/*.html; page links use `href`.
   nav: [
     { id: "about", label: "About" },
-    { id: "work", label: "Work" },
+    { id: "work", label: "Work & Impact" },
     { id: "research", label: "Research" },
-    { id: "speaking", label: "Speaking" },
+    { id: "speaking", label: "Speaking & Media" },
     { id: "insights", label: "Insights" },
     { id: "gallery", label: "Gallery", href: "gallery.html" },
   ],
-  navCta: { label: "Let's talk", target: "contact" },
+  navCta: { label: "Collaborate", target: "contact" },
 
   socials: [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/emmaco4real" },

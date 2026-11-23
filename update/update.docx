@@ -1,0 +1,69 @@
+WEBSITE UPGRADE
+MASTER DESIGN & IMPLEMENTATION BRIEF
+Dr. Emmanuel A. Owolabi  |  dremmanuelowolabi.com  |  November 2026
+DESIGNER HANDOVER + AI BUILDER INPUT  •  Approval-first • No fabricated claims
+01  The mandate
+Upgrade the existing site into a visually exceptional, internationally credible, fast, accessible, easy-to-maintain personal website. This is a targeted upgrade, not a needless rebuild. It must support three audiences—institutions and research collaborators; healthcare innovators and strategic partners; speaking and media organisers—through one coherent identity. Do not turn it into a clinic booking site, an exaggerated investor pitch or a timeline/tracker.
+Success test: within 10 seconds a first-time visitor understands who Emmanuel is, what he builds, why he is credible, and how to contact him for the relevant opportunity.
+02  Brand system: premium, memorable, human
+Positioning: Physician • Healthcare Innovator • Researcher • Institution Builder. Core idea: “Building people, institutions and practical solutions for better healthcare in Africa.” Retain unless owner approves a change.
+Visual mood: editorial luxury meets contemporary health technology; calm authority, confident whitespace, cinematic but authentic photography, deliberate visual hierarchy. Not generic startup gradients, loud gold, stock-hospital imagery or AI-generated people.
+Palette proposal (designer may refine after visual testing): Midnight Navy #0C1B2A; Deep Ink #152B3E; Warm Ivory #F8F7F3; Cool Slate #64748B; muted Antique Gold #B59A62; accent Teal #0F766E sparingly for interactive/data cues. Maintain accessible contrast; gold is accent, never body copy on white.
+Typography: refined editorial display such as DM Serif Display or Fraunces for selective headings; highly legible Inter or Manrope for UI/body. Maximum two families, appropriate fallbacks, no tiny text.
+Identity: elegant “Dr. Emmanuel A. Owolabi” wordmark and optional restrained EAO monogram. Do not invent institutional logos, certificates or partner endorsements. Use supplied originals only.
+Image direction: authentic professional portrait as hero, then carefully curated real event and field photographs. Consistent crop, warm-natural colour grading, captions and alt text. Avoid excessive cut-outs and decorative icon clutter.
+03  Interface design specifications
+Desktop hero: generous white/ivory negative space; 55/45 editorial composition with headline and supporting copy left, original portrait right; subtle navy panel or image backdrop; two clear CTAs. On mobile stack text above portrait, preserve readable crop and visible CTA.
+Sticky but compact navigation: Home, About, Work & Impact, Research, Speaking & Media, Insights, Contact. Highlight “Work With Me” only if it routes to useful contact choices. Mobile menu must be keyboard accessible.
+Use restrained micro-interactions (150–250 ms), refined hover states, subtle section reveals only when motion preference permits. Never use auto-playing audio, scroll hijacking, excessive parallax, carousels that hide essential content, or decorative loading screens.
+Cards: large image or precise typographic hierarchy; 12–16 px corner radius at most; hairline borders or soft shadows; clear clickable affordances. Keep layouts airy, consistent and polished across breakpoints.
+Footer: compact biography, navigation, verified social links, professional email, copyright, privacy notice. Avoid broken or placeholder links.
+04  Page-by-page build specification
+HOME
+Sequence: (1) Hero and primary CTA; (2) succinct verified credibility strip; (3) three audience routes; (4) 3–4 featured case studies; (5) selected research and thought leadership; (6) speaking/media proof; (7) single high-confidence contact invitation. Keep homepage curated rather than repeating full biographies.
+Proposed hero: “Building people, institutions and practical solutions for better healthcare in Africa.” Subtext: “I’m Dr. Emmanuel A. Owolabi, a physician working at the intersection of healthcare innovation, research, education and leadership—turning important ideas into practical work.” Buttons: “Explore My Work” / “Start a Conversation”.
+ABOUT
+Story-led professional bio: clinical foundation, why health communication matters, evolution into research capacity, mentorship and health innovation, leadership philosophy, and current focus. Include short bio, full bio, downloadable approved CV, genuine portrait and verifiable credentials. Separate personal reflection from factual career timeline.
+WORK & IMPACT
+Featured projects: EOhealth, MentorMatrix Network, Publish to Greatness; ViHLERT as an EOhealth programme/case study. Each case study must show problem → response → Emmanuel’s actual role → team/collaborators → evidence/results → links → next step. Add dates, source of metrics and ownership attribution. No invented testimonials or exaggerated beneficiary outcomes.
+RESEARCH
+Searchable/filterable list of verified publications and outputs with title, authors, year, journal/event, DOI or public URL, contribution and status. Separate published, accepted, presented and in-progress work. Display interests in responsible AI, digital health, systems strengthening, medical education, antimicrobial resistance, surgery/orthopaedics only where owner confirms current focus.
+SPEAKING & MEDIA
+Concise speaker intro, 4–6 signature topics, verified past engagements, press mentions, 2 approved headshots, speaker sheet, media kit and a speaking-specific enquiry form. Avoid suggesting that attendance at a conference equals being an invited speaker.
+INSIGHTS
+Editorial categories: The African Health Fix; Research to Reality; Beyond the White Coat. Articles should be genuinely written or approved by Emmanuel, dated, with sources when factual and a clear distinction between analysis and personal opinion. Good article templates, not a content factory.
+CONTACT / WORK WITH ME
+One polished contact page with three intent options: Institutional & Research Collaboration; Healthcare Innovation & Strategic Partnership; Speaking & Media. Fields: name, email, organisation, enquiry type, message, optional timeframe. Show confirmation, spam protection and privacy disclosure; route submissions to a verified mailbox. Do not publish a phone number without consent.
+05  Existing site: preserve, improve, verify
+Preserve the current strong mission headline, authentic portrait, founder-platform overview, ViHLERT feature, research themes, Diana Award section, speaking topics, event imagery, insights and biography/media downloads if links work.
+Current site states 400+ people trained, 30+ medical schools, 3 founder-led platforms, 5 active Publish to Greatness groups and 54 members. These must be owner-verified for date, definition and evidence before carrying forward.
+Current site lists a Gmail address for speaking/contact. Confirm whether to keep it or use a domain email; never silently change a working contact.
+Current homepage uses repeated section number “05” for Impact in Practice and Insights; correct numbering or remove numbering entirely. Confirm all download links and gallery navigation work.
+Verify exact 2026 Diana Award attribution, project roles, team acknowledgements, programme status, affiliations, research citations and event captions against primary records.
+06  Engineering and quality bar
+Mobile-first responsive layouts at ~360, 390, 768, 1024 and 1440 px; no horizontal overflow, awkward hero crops, hidden buttons or tiny tap targets.
+Target WCAG 2.2 AA: semantic landmarks/headings, keyboard navigation, focus states, descriptive links, alt text, form labels/errors, contrast, reduced motion and screen-reader checks.
+Target excellent Core Web Vitals at 75th percentile: LCP ≤2.5s, INP ≤200ms, CLS ≤0.1; verify with field data when available. Optimise modern image formats, responsive sizes, font loading and JS.
+Technical SEO: unique titles/descriptions, canonical URLs, sitemap, robots rules, clean URLs, correct Open Graph/social cards, structured Person/Article data where accurate, and no indexation of staging.
+Security/privacy: HTTPS, form anti-spam, data minimisation, privacy notice, access control, backup and rollback plan. No exposed API keys, analytics without proper consent where required.
+Content maintenance: simple CMS or documented editing workflow for projects, metrics, articles, speaking engagements and publications; reusable components and clean handover notes.
+07  Owner approval sheet — do not guess
+CONFIRM: Preferred professional title and exact current roles
+CONFIRM: Approved short and long biographies; approved CV
+CONFIRM: Approved headshots, event images and usage permissions
+CONFIRM: Authentic award and organisation logos and usage rules
+CONFIRM: Project names, roles, collaborator credits and official URLs
+CONFIRM: Verified metrics, date ranges and evidence links
+CONFIRM: Publication list with DOIs, author order and status
+CONFIRM: Approved speaking engagements and topics
+CONFIRM: Primary email, verified social handles and contact routing
+CONFIRM: Preferred visual direction from 2–3 real design mockups
+08  Designer deliverables and acceptance criteria
+Provide desktop and mobile homepage concepts for owner approval BEFORE coding; include palette, typography, hero, project card and contact form. Show one primary concept and one tasteful alternative, not ten unrelated styles.
+Deliver a functioning staging site, not screenshots; retain current URLs or provide redirects; test all CTA buttons, downloads, links, forms and navigation.
+Provide a concise change log, technical audit evidence (Lighthouse + manual accessibility checks), source code access, CMS/admin access, backup/rollback instructions and a brief editing guide.
+Owner signs off factual claims, imagery, brand, and final live release. No auto-publication of invented bios, statistics, affiliations or articles.
+09  Copy-paste AI builder instruction
+You are upgrading https://dremmanuelowolabi.com for Dr. Emmanuel A. Owolabi. Follow this document as the source of design intent, but treat all biographical, quantitative and affiliation claims as requiring owner approval. First audit and preserve working components, content and URLs. Produce an elegant editorial visual system (navy/ivory/muted gold, authentic photography, premium typography), responsive mockups, then a functional staging implementation. Build the seven-page architecture and three enquiry pathways described above. Prioritise clarity, verifiable credibility, accessibility, performance, maintainability and real conversion. Do not fabricate awards, logos, projects, publications, partnerships, testimonials or impact. Do not deploy until the owner approves.
+Sources and review boundary
+Live website reviewed 15 November 2026: https://dremmanuelowolabi.com/ . Engineering guidance: https://web.dev/articles/vitals ; https://www.w3.org/TR/WCAG22/ ; https://developers.google.com/search/docs/fundamentals/seo-starter-guide . Visual choices are proposed art direction, not an objective benchmark; no hands-on device testing or analytics access was available.
