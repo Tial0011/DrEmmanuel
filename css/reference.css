@@ -998,7 +998,7 @@ body { padding-top: 78px; }
     object-position: 50% 22%;
     opacity: 0;
     transform: none;
-    transition: opacity .7s ease;
+    transition: opacity .55s ease;
   }
   .portrait__slide:first-child {
     object-fit: contain;

@@ -36,7 +36,7 @@ function initHeroSlideshow() {
   const start = () => {
     stop();
     if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      intervalId = window.setInterval(() => showSlide(activeIndex + 1), 5200);
+      intervalId = window.setInterval(() => showSlide(activeIndex + 1), 4000);
     }
   };
 
